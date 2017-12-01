@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("images/moviebg.png");
+}
+
+.pageBanner {
+	height: 50px;
+	background-image: url("images/rancidbannerbg.png");
+}
+
+.heading {
+	text-align:center;
+	font-family: Georgia, serif;
+	font-size: 24pt;
+	font-weight:bold;
+	text-shadow: 2pt 2pt dimgray;
+}
+
+.mainBox {
+	display: block;
+	background-color:lightgray;
+	width: 850px;
+	overflow:auto;
+	margin: auto;
+	border-radius: 25px;
+	box-shadow: 10px 10px gray;
+	
+}
+
+.boxBanner {
+	background-image: url("images/rottenlargebg.png");
+	border-radius: 25px 0px 0px 0px;
+	height: 83px;
+	width: 600px;
+	float:left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 48pt;
+	font-weight:bold;
+	text-align: center;
+	margin:auto;
+	color: red;
+}
+
+.revCol{
+	float: left;
+	width:275px;
+	margin: 10px;
+	
+}
+
+.quote{
+	background-color:white;
+	font-family: Georgia, serif;
+	font-size: 10pt;
+	padding: 6px;
+	border-radius: 20px;
+	border-style:solid;
+	border-width: 2px;
+	border-color: darkgray;
+}
+
+.list {
+	float:right;
+	width:250px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 10pt; 
+	background-color:darkseagreen;
+	border-radius: 0px 0px  25px 0px;
+}
+
+dd {
+	padding: 0px 12px 0px 12px;
+}
+
+dt {
+	padding: 5px 12px 0px 12px;
+}
+
+ul {
+	list-style-type:none;
+	text-align:left;
+}
