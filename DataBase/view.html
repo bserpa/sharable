@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>imdb small</title>
+</head>
+<body>
+<hr>
+<h3>Search for either all roles or all actors in the database imdb_small</h3>
+<hr>
+
+Search string <br>
+<input type="text" id="inp"><br>
+<button onclick="getActors()"> Actors </button>
+<button onclick="getRoles()"> Roles </button>
+<br><br><br>
+<hr>
+<div id="change"> </div>
+
+
+<script>
+var divToChange = document.getElementById("change");
+function getActors() {
+	var anObj = new XMLHttpRequest();
+	var actors = document.getElementById("inp").value;
+	anObj.open("GET", "controller.php?inp=" + actors+"&check=0", true);
+	anObj.send();
+	
+	anObj.onreadystatechange = function() {
+		if (anObj.readyState == 4 && anObj.status == 200) {
+			var array = JSON.parse(anObj.responseText);
+			var str = "";
+			for (i = 0; i < array.length; i++) {
+				str += array[i]['first_name'] + " " + array[i]['last_name'] + "<br>";
+			}
+			divToChange.innerHTML = '<br>'+str;
+		}
+	}
+}
+function getRoles() {
+	var anObj = new XMLHttpRequest();
+	var roles = document.getElementById("inp").value;
+	anObj.open("GET", "controller.php?inp=" + roles+"&check=1", true);
+	anObj.send();
+	
+	anObj.onreadystatechange = function() {
+		if (anObj.readyState == 4 && anObj.status == 200) {
+			var array = JSON.parse(anObj.responseText);
+			var str = "";
+			for (i = 0; i < array.length; i++) {
+				str += array[i]['role'] + "<br>";
+			}
+			divToChange.innerHTML = '<br>'+str;
+		}
+	}
+}
+</script>
+
+</body>
+</html>
